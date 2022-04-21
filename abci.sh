@@ -26,11 +26,18 @@ module load python/3.7/3.7.13
 echo "python version is"
 python3 -V
 
-cd stylegan3
+git clone https://github.com/n-yuzuto/stylegan3-pokemon.git
+cd stylegan3-pokemon
 
 pip3 install -r requirements.txt
 
-# cd shinra-bert/code
-
 echo "working directory is {$PWD}"
-python3 train.py --config_file abci.yml
+python dataset_tool.py \
+    --source=/home/acd14209pi/stylegan3-pokemon/pokemon-data \
+    --dest=/home/acd14209pi/stylegan3-pokemon/datasets/pokemon-256x256.zip \
+    --resolution=256x256
+
+python train.py --outdir=/home/acd14209pi/stylegan3-pokemon/training-runs \
+    --cfg=stylegan3-t \
+    --data=/home/acd14209pi/stylegan3-pokemon/datasets/pokemon-256x256.zip \
+    --cfg=stylegan3-t --gpus=8 --batch=32 --gamma=2

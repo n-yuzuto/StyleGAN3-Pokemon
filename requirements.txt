@@ -1,0 +1,11 @@
+torch==1.9.1
+pandas
+matplotlib
+scipy
+requests
+ninja
+scipy
+click
+Pillow
+numpy
+tqdm
