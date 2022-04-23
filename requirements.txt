@@ -9,3 +9,4 @@ click
 Pillow
 numpy
 tqdm
+psutil
