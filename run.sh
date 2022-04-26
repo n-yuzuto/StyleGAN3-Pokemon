@@ -29,6 +29,10 @@ python3 -V
 git clone https://github.com/n-yuzuto/stylegan3-pokemon.git
 cd stylegan3-pokemon
 
+wget https://github.com/ninja-build/ninja/releases/download/v1.8.2/ninja-linux.zip
+unzip unzip ninja-linux.zip -d /usr/local/bin/
+update-alternatives --install /usr/bin/ninja ninja /usr/local/bin/ninja 1 --force 
+
 pip install --upgrade pip
 pip3 install -r requirements.txt
 pip3 install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu113

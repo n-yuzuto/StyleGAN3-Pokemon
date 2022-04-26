@@ -2,8 +2,7 @@ pandas
 matplotlib==3.4.2
 scipy
 requests==2.26.0
-# ninja==1.10.2
-ninja
+ninja==1.10.2
 click
 pillow
 numpy>=1.20
